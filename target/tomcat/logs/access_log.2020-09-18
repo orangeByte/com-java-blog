@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:16:11:14 +0800] "DELETE /findUser?username=1&password=1 HTTP/1.1" 403 961 http-bio-8080-exec-2 84
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:16:11:31 +0800] "DELETE /findUser?username=1&password=1 HTTP/1.1" 403 961 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:16:11:52 +0800] "DELETE /user/findUser?username=1&password=1 HTTP/1.1" 405 1051 http-bio-8080-exec-4 4
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:16:12:57 +0800] "GET /user/findUser?username=1&password=1 HTTP/1.1" 200 181 http-bio-8080-exec-7 933
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:16:16:57 +0800] "GET /user/findUser HTTP/1.1" 200 54 http-bio-8080-exec-10 19
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:16:17:08 +0800] "GET /user/findUser HTTP/1.1" 200 54 http-bio-8080-exec-10 9
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:17:39:20 +0800] "GET /user/findUser?username=1&password=1 HTTP/1.1" 200 181 http-bio-8080-exec-2 933
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:19:26:47 +0800] "GET /user/findUser?username=1&password=1 HTTP/1.1" 200 181 http-bio-8080-exec-2 613
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:22:18:24 +0800] "GET /user/findUser HTTP/1.1" 200 54 http-bio-8080-exec-2 951

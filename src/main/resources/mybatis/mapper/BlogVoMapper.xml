@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.mapper.BlogVoMapper">
+
+    <resultMap id="blogVoResultMap" type="org.example.vo.BlogVo">
+        <id property="id" column="id"></id>
+        <result property="appreciation" column="appreciation"></result>
+        <result property="commentabled" column="commentabled"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="description" column="description"></result>
+        <result property="firstPicture" column="first_picture"></result>
+        <result property="flag" column="flag"></result>
+        <result property="published" column="published"></result>
+        <result property="recommend" column="recommend"></result>
+        <result property="shareStatement" column="share_statement"></result>
+        <result property="title" column="title"></result>
+        <result property="updateTime" column="update_time"></result>
+        <result property="views" column="views"></result>
+        <result property="typeId" column="type_id"></result>
+        <result property="userId" column="user_id"></result>
+        <result property="commentCount" column="comment_count"></result>
+        <result property="content" column="content"></result>
+
+        <association property="comment" javaType="org.example.entity.Comment">
+            <id property="id" column="id"></id>
+            <result property="nickname" column="nickname"></result>
+            <result property="email" column="email"></result>
+            <result property="content" column="content"></result>
+            <result property="avatar" column="avatar"></result>
+            <result property="createTime" column="create_time"></result>
+            <result property="blogId" column="blog_id"></result>
+            <result property="parentCommentId" column="parent_comment_id"></result>
+            <result property="adminComment" column="admin_comment"></result>
+        </association>
+        <association property="type" javaType="org.example.entity.Type">
+            <id property="id" column="id"></id>
+            <result property="name" column="name"></result>
+        </association>
+        <association property="user" javaType="org.example.entity.User">
+            <id property="id" column="id"></id>
+            <result property="avatar" column="avatar"></result>
+            <result property="createTime" column="create_time"></result>
+            <result property="email" column="email"></result>
+            <result property="nickname" column="nickname"></result>
+            <result property="password" column="password"></result>
+            <result property="type" column="type"></result>
+            <result property="updateTime" column="update_time"></result>
+            <result property="username" column="username"></result>
+        </association>
+
+    </resultMap>
+    <select id="getBlogVoList" resultMap="blogVoResultMap">
+        select * from
+        blog.tb_blog b
+        left join blog.tb_comment c
+        on b.id=c.blog_id
+        left join blog.tb_type t
+        on b.type_id=t.id
+        left join blog.tb_user u
+        on b.user_id=u.id
+        order by b.id asc
+    </select>
+
+</mapper>
